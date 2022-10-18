@@ -71,9 +71,10 @@ body {
   --clr-orange: hsl(33, 100%, 98%);
 
   /* typography */
-  --fs-s: 1.126rem;
-  --fs-m: 2rem;
-  --fs-l: 2.5rem;
+  --fs-xs: 0.75rem;
+  --fs-s: 1rem;
+  --fs-m: 1.2rem;
+  --fs-l: 1.8rem;
 
   --fw-s: 400;
   --fw-l: 700;
@@ -100,6 +101,7 @@ body {
   /* set dynamic width to fit all devices */
   width: min(25rem, 100%);
   border-radius: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .balance {
@@ -122,5 +124,68 @@ body {
 
 .stats {
   background-color: var(--clr-orange);
+  color: var(--clr-brown);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stats__title {
+  font-size: var(--fs-m);
+  font-weight: var(--fw-l);
+}
+
+.stats__chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stats__vector,
+.stats__days {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  place-content: center;
+}
+
+.stats__vector__item {
+  justify-self: center;
+  background-color: var(--clr-red);
+  width: 2.2rem;
+  height: 5rem;
+  border-radius: 0.2rem;
+}
+
+.stats__day {
+  justify-self: center;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-s);
+  color: var(--clr-brownlight);
+}
+
+.stats__summary {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.1rem solid var(--clr-brownlight);
+  padding-top: 1.5rem;
+}
+
+.stats__summary p {
+  font-size: var(--fs-s);
+  font-weight: var(--fw-s);
+  color: var(--clr-brownlight);
+}
+
+.stats__month-current,
+.stats__month-last {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.stats__month-current > h1 {
+  font-size: var(--fs-l);
+  font-weight: var(--fw-l);
   color: var(--clr-brown);
 }
