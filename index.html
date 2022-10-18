@@ -13,16 +13,55 @@
     />
 
     <title>Frontend Mentor | Expenses chart component</title>
+    <link rel="stylesheet" href="/src/css/styles.css" />
   </head>
   <body>
-    My balance $921.48 Spending - Last 7 days mon tue wed thu fri sat sun Total
-    this month $478.33 +2.4% from last month
+    <main class="app container">
+      <!-- Balance -->
+      <header class="balance container">
+        <div class="balance__info">
+          <p>My balance</p>
+          <p>$921.48</p>
+        </div>
+        <div class="balance__logo">
+          <img src="./images/logo.svg" alt="" />
+        </div>
+      </header>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+      <!-- Stats -->
+      <article class="stats container">
+        <h1 class="stats__title">Spending - Last 7 days</h1>
+        <div class="stats__chart">
+          <div class="stats__vector">
+            <span class="stats__vector__item"></span>
+            <span class="stats__vector__item"></span>
+            <span class="stats__vector__item"></span>
+            <span class="stats__vector__item"></span>
+            <span class="stats__vector__item"></span>
+            <span class="stats__vector__item"></span>
+            <span class="stats__vector__item"></span>
+          </div>
+          <div class="stats__days">
+            <p class="stats__day">mon</p>
+            <p class="stats__day">tue</p>
+            <p class="stats__day">wed</p>
+            <p class="stats__day">thu</p>
+            <p class="stats__day">fri</p>
+            <p class="stats__day">sat</p>
+            <p class="stats__day">sun</p>
+          </div>
+        </div>
+        <aside class="stats__summary">
+          <div class="stats__month-current">
+            <p>Total this month</p>
+            <h1>$478.33</h1>
+          </div>
+          <div class="stats__month-last">
+            <h3>+2.4%</h3>
+            <p>from last month</p>
+          </div>
+        </aside>
+      </article>
+    </main>
   </body>
 </html>

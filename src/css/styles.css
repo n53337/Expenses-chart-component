@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
 /*
   * CSS RESET
 */
@@ -48,4 +50,77 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+/* set default font */
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+/*
+  * CSS VARIABLES
+*/
+
+:root {
+  /* colros */
+  --clr-red: hsl(10, 79%, 65%);
+  --clr-cyan: hsl(186, 34%, 60%);
+  --clr-brown: hsl(25, 47%, 15%);
+  --clr-brownlight: hsl(28, 10%, 53%);
+  --clr-cream: hsl(27, 66%, 92%);
+  --clr-orange: hsl(33, 100%, 98%);
+
+  /* typography */
+  --fs-s: 1.126rem;
+  --fs-m: 2rem;
+  --fs-l: 2.5rem;
+
+  --fw-s: 400;
+  --fw-l: 700;
+}
+
+/* STYLES */
+
+.container {
+  padding: 1rem;
+}
+
+.app {
+  min-height: 100vh;
+  background-color: var(--clr-cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.balance,
+.stats {
+  /* set dynamic width to fit all devices */
+  width: min(25rem, 100%);
+  border-radius: 1rem;
+}
+
+.balance {
+  background-color: var(--clr-red);
+  color: var(--clr-orange);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.balance__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.balance__info > p:last-child {
+  font-size: var(--fs-m);
+  font-weight: var(--fw-l);
+}
+
+.stats {
+  background-color: var(--clr-orange);
+  color: var(--clr-brown);
 }
