@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [click here!](https://fem-cards.netlify.app/)
+- Live Site URL: [click here!](https://fem-chart.netlify.app/)
 
 ## My process
 
