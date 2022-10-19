@@ -133,12 +133,20 @@ body {
 .stats__title {
   font-size: var(--fs-m);
   font-weight: var(--fw-l);
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
 }
 
 .stats__chart {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stats__vector__content {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -150,21 +158,13 @@ body {
   place-content: center;
 }
 
-.stats__vector__content {
-  justify-self: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 .stats__vector-item {
   background-color: var(--clr-red);
   width: 2.2rem;
   height: 5rem;
   border-radius: 0.2rem;
   cursor: pointer;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 .stats__vector-item:hover {
@@ -172,13 +172,14 @@ body {
   opacity: 0.8;
 }
 
-.stats__show-data {
+.stats__vector-data {
   font-size: var(--fs-xs);
   background-color: var(--clr-brown);
   color: var(--clr-orange);
   font-weight: var(--fw-l);
   padding: 0.2rem;
   border-radius: 0.2rem;
+  transition: 0.5s;
 }
 
 .stats__day {
@@ -221,5 +222,6 @@ body {
 /* display toogle */
 
 .d-none {
-  display: none;
+  opacity: 0;
+  transition: 0.5s;
 }
