@@ -6,7 +6,6 @@ const statsValueHolder = document.querySelectorAll(".stats__vector-data");
 const days = document.querySelectorAll(".stats__day");
 
 // Get JSON file
-
 const getData = async () => {
   try {
     const req = await fetch("/data.json");
@@ -17,17 +16,24 @@ const getData = async () => {
   }
 };
 
-// Render Data to chart
-
+// Render chart using JSON data
 const renderChart = async () => {
   const data = await getData();
-  statsValueHolder.forEach((e, i) => {
+  statsChart.forEach((e, i) => {
     // render amount and day
-    e.textContent = `$${data[i].amount}`;
+    statsValueHolder[i].textContent = `$${data[i].amount}`;
     days[i].textContent = data[i].day;
 
-    // dynamic chart width using data
+    // dynamic chart bar width using data
+    e.style.height = `${data[i].amount / 5}rem`;
   });
+
+  // highest amount color change
+  const amounts = data.map((e) => e.amount);
+  const max = Math.max(...amounts);
+  const index = amounts.indexOf(max);
+  console.log(amounts, index);
+  statsChart[index].style.background = "var(--clr-cyan)";
 };
 renderChart();
 
