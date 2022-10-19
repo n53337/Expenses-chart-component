@@ -29,11 +29,13 @@ const App = () => {
       e.style.height = `${data[i].amount / 5}rem`;
     });
 
-    // highest amount color change
-    const amounts = data.map((e) => e.amount);
-    const max = Math.max(...amounts);
-    const index = amounts.indexOf(max);
-    statsChart[index].style.background = "var(--clr-cyan)";
+    // Highlight today's chart
+    const currDate = new Date().getDay();
+    if (!currDate) {
+      statsChart[statsChart.length - 1].style.background = "var(--clr-cyan)";
+    } else {
+      statsChart[currDate - 1].style.background = "var(--clr-cyan)";
+    }
   };
   renderChart();
 
